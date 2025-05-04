@@ -1,7 +1,6 @@
 # Untrimmed Slayer Cape Helper
 
 - Shows the amount of cannon slayer experience required to obtain 99 Slayer **at the same time** as 99 Hitpoints.
-  > [!WARNING]
   > The player can use this indicator as a guide but will need to adjust their playstyle accordingly to obtain 99 Slayer **before** 99 Hitpoints.
 
 ### Feature requests welcome!
