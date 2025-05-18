@@ -8,11 +8,33 @@ import net.runelite.client.config.ConfigItem;
 public interface UntrimmedSlayerCapeHelperConfig extends Config
 {
 	@ConfigItem(
-		keyName = "showSlayerCannonExp",
-		name = "Show Slayer Cannon XP",
-		description = "Show the amount of cannon slayer experience required to obtain 99 Slayer at the same time as 99 Hitpoints."
+			keyName = "showSlayerExpRemaining",
+			name = "Show Slayer XP remaining to 99",
+			description = "Show the amount of slayer experience remaining to obtain 99."
 	)
-	default boolean showSlayerCannonExp()
+	default boolean showSlayerExpRemaining()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+			keyName = "showProjectedHitpointsExp",
+			name = "Show Projected Hitpoints XP",
+			description = "Show your expected Hitpoints XP after reaching 99 Slayer from standard combat."
+	)
+	default boolean showProjectedHitpointsExp()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+		keyName = "showSlayerOnlyExp",
+		name = "Show Slayer Only XP Remaining",
+		description = "Show the amount of slayer experience required (without gaining HP XP) to reach 99 Slayer at the "
+					+ "same time as 99 Hitpoints. The goal is to be in the negative (green). To achieve this; cannon "
+					+ "tasks, prioritise boss tasks, and utilize thrall on tasks."
+	)
+	default boolean showSlayerOnlyExp()
 	{
 		return true;
 	}
