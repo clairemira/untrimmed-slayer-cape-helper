@@ -29,18 +29,18 @@ public class UntrimmedSlayerCapeHelperPlugin extends Plugin
 	private UntrimmedSlayerCapeHelperConfig config;
 
 	@Inject
-	private UntrimmedSlayerCapeHelperCannonExpOverlayPanel cannonExpOverlay;
+	private UntrimmedSlayerCapeHelperOverlayPanel overlayPanel;
 
 	@Override
 	protected void startUp() throws Exception
 	{
-		overlayManager.add(cannonExpOverlay);
+		overlayManager.add(overlayPanel);
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		overlayManager.remove(cannonExpOverlay);
+		overlayManager.remove(overlayPanel);
 	}
 
 	@Provides
@@ -49,14 +49,27 @@ public class UntrimmedSlayerCapeHelperPlugin extends Plugin
 		return configManager.getConfig(UntrimmedSlayerCapeHelperConfig.class);
 	}
 
-	public int getCannonExperienceRemaining()
+	public int getSlayerExpRemaining()
+	{
+		int exp99 = Experience.getXpForLevel(99);
+		int slayerExp = client.getSkillExperience(Skill.SLAYER);
+
+		return exp99 - slayerExp;
+	}
+
+	public int getProjectedHitpointsExp()
+	{
+		int hpExp = client.getSkillExperience(Skill.HITPOINTS);
+		double projectedHitpointsExp = getSlayerExpRemaining() * 1.33 + hpExp;
+
+		return (int) Math.round(projectedHitpointsExp);
+	}
+
+	public int getSlayerOnlyExpRemaining()
     {
         int exp99 = Experience.getXpForLevel(99);
-        int slayerExp = client.getSkillExperience(Skill.SLAYER);
-        int hpExp = client.getSkillExperience(Skill.HITPOINTS);
+        double slayerOnlyExpRemaining = (getProjectedHitpointsExp() - exp99) / 1.33;
 
-        double cannonExpRemaining = (((exp99 - slayerExp) * 1.3) + hpExp - exp99) / 1.3;
-
-        return (int) Math.round(cannonExpRemaining);
+        return (int) Math.round(slayerOnlyExpRemaining);
     }
 }
