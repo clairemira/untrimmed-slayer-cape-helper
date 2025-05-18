@@ -32,7 +32,7 @@ public interface UntrimmedSlayerCapeHelperConfig extends Config
 		name = "Show Slayer Only XP Remaining",
 		description = "Show the amount of slayer experience required (without gaining HP XP) to reach 99 Slayer at the "
 					+ "same time as 99 Hitpoints. The goal is to be in the negative (green). To achieve this; cannon "
-					+ "tasks, prioritise boss tasks, and utilize thrall on tasks."
+					+ "tasks, prioritise boss tasks, and utilize thralls on tasks."
 	)
 	default boolean showSlayerOnlyExp()
 	{

@@ -1,7 +1,8 @@
 # Untrimmed Slayer Cape Helper
 
-- Shows the amount of cannon slayer experience required to obtain 99 Slayer **at the same time** as 99 Hitpoints.
-  > The player can use this indicator as a guide but will need to adjust their playstyle accordingly to obtain 99 Slayer **before** 99 Hitpoints.
+- Shows the amount of slayer-only experience required to obtain 99 Slayer **at the same time** as 99 Hitpoints, factoring in standard combat experience.
+  > The player can use this indicator as a guide but will need to adjust their playstyle accordingly to obtain 99 Slayer **before** 99 Hitpoints. The goal is to keep this indicator in the negative (green). To achieve this the player should prioritise; cannoning tasks, boss tasks (e.g. Tortured demons, Jad/Zuk, Superiors), and utilizing thralls on tasks.
+- Shows the amount of expected Hitpoints XP after obtaining 99 Slayer from standard combat.
 
 ### Feature requests welcome!
 
